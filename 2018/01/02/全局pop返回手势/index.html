@@ -5,14 +5,18 @@
   
 
   
-  <title>lvzhenhua</title>
+  <title>全局pop返回手势 | lvzhenhua</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lvzhenhua">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="实现全局的pop手势需要先获取系统手势交互对应interactivePopGestureRecognizer 12345678910111213var outCount : UInt32 = 0let ivars = class_copyIvarList(UIGestureRecognizer.self, &amp;amp;outCount)!for i in 0..&amp;lt;outCount &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全局pop返回手势">
+<meta property="og:url" content="http://yoursite.com/2018/01/02/全局pop返回手势/index.html">
 <meta property="og:site_name" content="lvzhenhua">
+<meta property="og:description" content="实现全局的pop手势需要先获取系统手势交互对应interactivePopGestureRecognizer 12345678910111213var outCount : UInt32 = 0let ivars = class_copyIvarList(UIGestureRecognizer.self, &amp;amp;outCount)!for i in 0..&amp;lt;outCount &amp;#123;">
+<meta property="og:updated_time" content="2018-01-02T09:01:25.462Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lvzhenhua">
+<meta name="twitter:title" content="全局pop返回手势">
+<meta name="twitter:description" content="实现全局的pop手势需要先获取系统手势交互对应interactivePopGestureRecognizer 12345678910111213var outCount : UInt32 = 0let ivars = class_copyIvarList(UIGestureRecognizer.self, &amp;amp;outCount)!for i in 0..&amp;lt;outCount &amp;#123;">
   
     <link rel="alternate" href="/atom.xml" title="lvzhenhua" type="application/atom+xml">
   
@@ -63,9 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-全局pop返回手势" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-全局pop返回手势" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/02/全局pop返回手势/" class="article-date">
   <time datetime="2018-01-02T08:57:58.000Z" itemprop="datePublished">2018-01-02</time>
@@ -78,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/全局pop返回手势/">全局pop返回手势</a>
+    <h1 class="article-title" itemprop="name">
+      全局pop返回手势
     </h1>
   
 
@@ -101,94 +103,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-AVAssetResourceLoader" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/02/AVAssetResourceLoader/" class="article-date">
-  <time datetime="2018-01-01T16:00:00.000Z" itemprop="datePublished">2018-01-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/AVAssetResourceLoader/">AVAssetResourceLoader</a>
-    </h1>
+    <a href="/2018/01/02/AVAssetResourceLoader/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">AVAssetResourceLoader</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="AVAssetResourceLoader"><a href="#AVAssetResourceLoader" class="headerlink" title="AVAssetResourceLoader"></a>AVAssetResourceLoader</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(void)setDelegate:(nullable id &lt;AVAssetResourceLoaderDelegate&gt;)delegate queue:(nullable dispatch_queue_t)delegateQueue</span><br></pre></td></tr></table></figure>
-<p>与AVPlayer’s automaticallyWaitsToMinimizeStalling的属性有关。当设置了delegate之后一般要设置此属性为NO，当为YES的时候回导致对此启动次数和恢复，因为AVPlayer依赖更多可靠的数据。</p>
-<h4 id="AVAssetResourceLoaderDelegate-protocol"><a href="#AVAssetResourceLoaderDelegate-protocol" class="headerlink" title="AVAssetResourceLoaderDelegate(protocol)"></a>AVAssetResourceLoaderDelegate(protocol)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest</span><br><span class="line"></span><br><span class="line">//当接收到数据的时候就会走这个方法，去处理数据。会根据decryption keys和自定义的一些URL Schemes </span><br><span class="line">//当返回为YES的时候，需要调用[AVAssetResourceLoadingRequest finishLoading] or -[AVAssetResourceLoadingRequest finishLoadingWithError:]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest</span><br><span class="line">//之前加载的数据取消</span><br></pre></td></tr></table></figure>
-<h4 id="AVAssetResourceLoadingRequest"><a href="#AVAssetResourceLoadingRequest" class="headerlink" title="AVAssetResourceLoadingRequest"></a>AVAssetResourceLoadingRequest</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, readonly, getter=isFinished) BOOL finished 判断数据是否加载完成</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, readonly, nullable) AVAssetResourceLoadingContentInformationRequest *contentInformationRequest  加载的内容信息请求</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, readonly, nullable) AVAssetResourceLoadingDataRequest *dataRequest  数据被加载的范围</span><br></pre></td></tr></table></figure>
-<h4 id="AVAssetResourceLoadingContentInformationRequest"><a href="#AVAssetResourceLoadingContentInformationRequest" class="headerlink" title="AVAssetResourceLoadingContentInformationRequest"></a>AVAssetResourceLoadingContentInformationRequest</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, copy, nullable) NSString *contentType; // 请求的资源的数据类型</span><br><span class="line"></span><br><span class="line">@property (nonatomic) long long contentLength ; //请求的内容的长度</span><br><span class="line"></span><br><span class="line">@property (nonatomic, getter=isByteRangeAccessSupported) BOOL byteRangeAccessSupported ; //是否支持数据分片</span><br></pre></td></tr></table></figure>
-<h4 id="AVAssetResourceLoadingDataRequest"><a href="#AVAssetResourceLoadingDataRequest" class="headerlink" title="AVAssetResourceLoadingDataRequest"></a>AVAssetResourceLoadingDataRequest</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/AVAssetResourceLoader/" data-id="cjbxeo339000039s68r8ke1ct" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/29/hello-world/" class="article-date">
-  <time datetime="2017-12-29T08:08:11.000Z" itemprop="datePublished">2017-12-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/29/hello-world/">hello,world</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Hello,world! </p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/29/hello-world/" data-id="cjbxeo33h000139s6dx7kx647" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
