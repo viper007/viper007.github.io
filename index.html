@@ -65,6 +65,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-创建私有的podspec" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/08/创建私有的podspec/" class="article-date">
+  <time datetime="2018-01-08T06:35:47.000Z" itemprop="datePublished">2018-01-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/08/创建私有的podspec/">创建私有的podspec</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-创建一个lib的连接库"><a href="#1-创建一个lib的连接库" class="headerlink" title="1.创建一个lib的连接库"></a>1.创建一个lib的连接库</h3><blockquote>
+<p>$ pod lib create [NAME]   </p>
+<p>举例：pod lib creaet MYKit</p>
+</blockquote>
+<p>   上面的是创建一个lib模板库，这个是从github上下载下来的模板。当然也可以自己制作模板（这个有心人可以试一试）。</p>
+<ul>
+<li>在创建的过程中会让你选择对应的一些基本的配置比如开发语言，测试的矿建了，是否包含实例工程等。</li>
+</ul>
+<ul>
+<li>其中MYKit里面包含两个文件一个是Assets(存放资源的)，一个是Classes(库文件)</li>
+<li>需要把对应的资源文件和库文件添加到对应的文件里面去。</li>
+<li>验证库文件的正确性，在Example中执行pod install并测试库的完成性和稳定性。</li>
+</ul>
+<h3 id="2-添加一个远程的仓库"><a href="#2-添加一个远程的仓库" class="headerlink" title="2. 添加一个远程的仓库"></a>2. 添加一个远程的仓库</h3><p>这个是你的库的仓库，是用来上传代码的仓库</p>
+<blockquote>
+<p>git remote add [NAME]  [URL]     添加</p>
+<p>NAME是你的仓库的名字 URL是地址</p>
+<p> git push -u origin master  上传</p>
+</blockquote>
+<p>这个时候要注意的一点是，利用私有库添加的必须添加过Tag标签</p>
+<blockquote>
+<p>git tags 查看当前标签 </p>
+<p>git tag ‘0.1.0’ 添加标签</p>
+<p>git push [NAME]  –tags  上传标签</p>
+</blockquote>
+<h3 id="3-制作podspec文件，修改对应的文件的格式"><a href="#3-制作podspec文件，修改对应的文件的格式" class="headerlink" title="3.制作podspec文件，修改对应的文件的格式"></a>3.制作podspec文件，修改对应的文件的格式</h3><blockquote>
+<p>$pod lib lint 验证是否正确</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-&gt; MYKit (<span class="number">0</span>.<span class="number">1.0</span>) </span><br><span class="line">MYKit passed validation.</span><br></pre></td></tr></table></figure>
+<p>如果出现验证通过说明没有问题</p>
+<h3 id="4-添加pod-repo的文件"><a href="#4-添加pod-repo的文件" class="headerlink" title="4.添加pod repo的文件"></a>4.添加pod repo的文件</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pod repo add [NAME] [URL]   /<span class="regexp">/添加repo</span></span><br><span class="line"><span class="regexp">$ pod repo push [repo-Name] [repo-Name.podspec]   /</span><span class="regexp">/上传podspec</span></span><br></pre></td></tr></table></figure>
+<p>然后在本地的文件夹下面查看对应的索引库是否存在</p>
+<p>~/.cocoapods/repos/   下是否存在对应的那个索引库</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/08/创建私有的podspec/" data-id="cjc5w3zke0002xss6bak49sgt" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-全局pop返回手势" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/02/全局pop返回手势/" class="article-date">
@@ -95,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/全局pop返回手势/" data-id="cjbxeo33i000239s6zu4tbzab" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/02/全局pop返回手势/" data-id="cjc5w3zkc0001xss6wkvigyjg" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -139,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/AVAssetResourceLoader/" data-id="cjbxeo339000039s68r8ke1ct" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/02/AVAssetResourceLoader/" data-id="cjc5w3zk80000xss6mgfx7b6f" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -178,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/29/hello-world/" data-id="cjbxeo33h000139s6dx7kx647" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/29/hello-world/" data-id="cjc5w3zkf0003xss6bmo93tys" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -217,6 +286,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/08/创建私有的podspec/">创建私有的podspec</a>
+          </li>
         
           <li>
             <a href="/2018/01/02/全局pop返回手势/">全局pop返回手势</a>
