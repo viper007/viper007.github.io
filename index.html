@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -104,6 +104,9 @@
 <li>$pod lib lint —allow-warnings 这个只是验证本地的pod库符合规范。不一定能够安装通过的。</li>
 </ul>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-&gt; MYKit (<span class="number">0</span>.<span class="number">1.0</span>) </span><br><span class="line">MYKit passed validation.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>pod spec lint 这个是验证对应的podspec书写是否符合规范，这个只是验证写的是否正确。</li>
+</ul>
 <p>如果出现验证通过说明没有问题</p>
 <h3 id="4-添加pod-repo的文件"><a href="#4-添加pod-repo的文件" class="headerlink" title="4.添加pod repo的文件"></a>4.添加pod repo的文件</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pod repo add [NAME] [URL]   /<span class="regexp">/添加repo</span></span><br><span class="line"><span class="regexp">$ pod repo push [repo-Name] [repo-Name.podspec]   /</span><span class="regexp">/上传podspec</span></span><br></pre></td></tr></table></figure>
 <p>然后在本地的文件夹下面查看对应的索引库是否存在</p>
@@ -115,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/08/创建私有的podspec/" data-id="cjcpyjhb50002xts60tqxzy7i" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/01/08/创建私有的podspec/" data-id="cjcpyjhb50002xts60tqxzy7i" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -155,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/全局pop返回手势/" data-id="cjcpyjhb30001xts60hkoq47v" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/01/02/全局pop返回手势/" data-id="cjcpyjhb30001xts60hkoq47v" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -199,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/AVAssetResourceLoader/" data-id="cjcpyjhaz0000xts6zgldjaj4" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/01/02/AVAssetResourceLoader/" data-id="cjcpyjhaz0000xts6zgldjaj4" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -225,7 +228,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -235,7 +238,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -264,7 +267,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 lvzhenhua<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
